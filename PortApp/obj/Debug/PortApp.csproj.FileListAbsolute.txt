@@ -1,0 +1,10 @@
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\bin\Debug\PortApp.exe.config
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\bin\Debug\PortApp.exe
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\bin\Debug\PortApp.pdb
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.csproj.AssemblyReference.cache
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.Properties.Resources.resources
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.csproj.GenerateResource.cache
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.csproj.CoreCompileInputs.cache
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.exe
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.pdb
