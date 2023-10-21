@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
             this.cBoxParityBits = new System.Windows.Forms.ComboBox();
-            this.cBoxStopDataBits = new System.Windows.Forms.ComboBox();
+            this.cBoxStopBits = new System.Windows.Forms.ComboBox();
             this.cBoxDataBits = new System.Windows.Forms.ComboBox();
             this.cBoxBaudRate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cBoxBaudRate);
             this.groupBox1.Controls.Add(this.cBoxDataBits);
-            this.groupBox1.Controls.Add(this.cBoxStopDataBits);
+            this.groupBox1.Controls.Add(this.cBoxStopBits);
             this.groupBox1.Controls.Add(this.cBoxParityBits);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -86,13 +86,13 @@
             this.cBoxParityBits.Size = new System.Drawing.Size(121, 21);
             this.cBoxParityBits.TabIndex = 1;
             // 
-            // cBoxStopDataBits
+            // cBoxStopBits
             // 
-            this.cBoxStopDataBits.FormattingEnabled = true;
-            this.cBoxStopDataBits.Location = new System.Drawing.Point(129, 97);
-            this.cBoxStopDataBits.Name = "cBoxStopDataBits";
-            this.cBoxStopDataBits.Size = new System.Drawing.Size(121, 21);
-            this.cBoxStopDataBits.TabIndex = 2;
+            this.cBoxStopBits.FormattingEnabled = true;
+            this.cBoxStopBits.Location = new System.Drawing.Point(129, 97);
+            this.cBoxStopBits.Name = "cBoxStopBits";
+            this.cBoxStopBits.Size = new System.Drawing.Size(121, 21);
+            this.cBoxStopBits.TabIndex = 2;
             // 
             // cBoxDataBits
             // 
@@ -174,6 +174,7 @@
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Open\r\n";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnClose
             // 
@@ -183,6 +184,7 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // progressBar1
             // 
@@ -199,6 +201,7 @@
             this.btnSendData.TabIndex = 2;
             this.btnSendData.Text = "Send Data";
             this.btnSendData.UseVisualStyleBackColor = true;
+            this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
             // 
             // tBoxDataOut
             // 
@@ -235,7 +238,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cBoxBaudRate;
         private System.Windows.Forms.ComboBox cBoxDataBits;
-        private System.Windows.Forms.ComboBox cBoxStopDataBits;
+        private System.Windows.Forms.ComboBox cBoxStopBits;
         private System.Windows.Forms.ComboBox cBoxParityBits;
         private System.Windows.Forms.ComboBox cBoxCOMPORT;
         private System.Windows.Forms.Label label5;
