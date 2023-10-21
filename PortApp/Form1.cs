@@ -78,5 +78,12 @@ namespace PortApp
                 serialPort1.WriteLine(dataOUT);
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cBoxCOMPORT.Items.Clear();
+            string[] ports = SerialPort.GetPortNames();
+            cBoxCOMPORT.Items.AddRange(ports);
+        }
     }
 }
