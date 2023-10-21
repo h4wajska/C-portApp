@@ -8,3 +8,4 @@ C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.cspr
 C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.csproj.CoreCompileInputs.cache
 C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.exe
 C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.pdb
+C:\Users\barto\OneDrive\Pulpit\Udemy\C#\C#portApp\PortApp\obj\Debug\PortApp.Form1.resources
