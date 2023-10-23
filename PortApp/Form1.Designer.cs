@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,13 +48,27 @@
             this.btnSendData = new System.Windows.Forms.Button();
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -67,10 +82,20 @@
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(265, 182);
+            this.groupBox1.Size = new System.Drawing.Size(265, 246);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Com Port Control";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(129, 151);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(121, 23);
+            this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.Text = "Refresh ";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // label5
             // 
@@ -162,7 +187,7 @@
             this.groupBox2.Controls.Add(this.progressBar1);
             this.groupBox2.Controls.Add(this.btnClose);
             this.groupBox2.Controls.Add(this.btnOpen);
-            this.groupBox2.Location = new System.Drawing.Point(12, 200);
+            this.groupBox2.Location = new System.Drawing.Point(12, 264);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(184, 87);
             this.groupBox2.TabIndex = 1;
@@ -170,14 +195,14 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 48);
+            this.progressBar1.Location = new System.Drawing.Point(13, 55);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(161, 23);
             this.progressBar1.TabIndex = 2;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(103, 19);
+            this.btnClose.Location = new System.Drawing.Point(103, 26);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(71, 23);
             this.btnClose.TabIndex = 1;
@@ -187,7 +212,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(13, 19);
+            this.btnOpen.Location = new System.Drawing.Point(13, 26);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(74, 23);
             this.btnOpen.TabIndex = 0;
@@ -197,9 +222,9 @@
             // 
             // btnSendData
             // 
-            this.btnSendData.Location = new System.Drawing.Point(202, 200);
+            this.btnSendData.Location = new System.Drawing.Point(6, 221);
             this.btnSendData.Name = "btnSendData";
-            this.btnSendData.Size = new System.Drawing.Size(75, 87);
+            this.btnSendData.Size = new System.Drawing.Size(101, 38);
             this.btnSendData.TabIndex = 2;
             this.btnSendData.Text = "Send Data";
             this.btnSendData.UseVisualStyleBackColor = true;
@@ -207,21 +232,117 @@
             // 
             // tBoxDataOut
             // 
-            this.tBoxDataOut.Location = new System.Drawing.Point(297, 27);
+            this.tBoxDataOut.Location = new System.Drawing.Point(6, 16);
             this.tBoxDataOut.Multiline = true;
             this.tBoxDataOut.Name = "tBoxDataOut";
-            this.tBoxDataOut.Size = new System.Drawing.Size(157, 260);
+            this.tBoxDataOut.Size = new System.Drawing.Size(317, 197);
             this.tBoxDataOut.TabIndex = 3;
             // 
-            // btnRefresh
+            // checkBox1
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(129, 151);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(121, 23);
-            this.btnRefresh.TabIndex = 10;
-            this.btnRefresh.Text = "Refresh ";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox1.Location = new System.Drawing.Point(33, 180);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(101, 19);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "DTR ENABLE";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox2.Location = new System.Drawing.Point(141, 180);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(100, 19);
+            this.checkBox2.TabIndex = 11;
+            this.checkBox2.Text = "RTS ENABLE";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox5);
+            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.tBoxDataOut);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnSendData);
+            this.groupBox3.Location = new System.Drawing.Point(283, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(387, 339);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Transmitter Control";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 38);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Clear Data OUT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSendData_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.checkBox4);
+            this.groupBox4.Controls.Add(this.checkBox3);
+            this.groupBox4.Location = new System.Drawing.Point(113, 221);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(102, 80);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(7, 20);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(87, 17);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "Using Button";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(7, 44);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(81, 17);
+            this.checkBox4.TabIndex = 1;
+            this.checkBox4.Text = "Using Enter";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(7, 44);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(51, 17);
+            this.checkBox5.TabIndex = 1;
+            this.checkBox5.Text = "Write";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(7, 20);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(71, 17);
+            this.checkBox6.TabIndex = 0;
+            this.checkBox6.Text = "WriteLine";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.checkBox5);
+            this.groupBox5.Controls.Add(this.checkBox6);
+            this.groupBox5.Location = new System.Drawing.Point(221, 221);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(102, 80);
+            this.groupBox5.TabIndex = 5;
+            this.groupBox5.TabStop = false;
             // 
             // Form1
             // 
@@ -229,8 +350,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tBoxDataOut);
-            this.Controls.Add(this.btnSendData);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -240,8 +360,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -266,6 +391,16 @@
         private System.Windows.Forms.TextBox tBoxDataOut;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
     }
 }
 
