@@ -271,6 +271,7 @@
             this.tBoxDataOut.Size = new System.Drawing.Size(317, 197);
             this.tBoxDataOut.TabIndex = 3;
             this.tBoxDataOut.TextChanged += new System.EventHandler(this.tBoxDataOut_TextChanged);
+            this.tBoxDataOut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxDataOut_KeyDown);
             // 
             // groupBox3
             // 
@@ -306,6 +307,7 @@
             this.cbWrite.TabIndex = 1;
             this.cbWrite.Text = "Write";
             this.cbWrite.UseVisualStyleBackColor = true;
+            this.cbWrite.CheckedChanged += new System.EventHandler(this.cbWrite_CheckedChanged);
             // 
             // cbWriteLine
             // 
@@ -316,6 +318,7 @@
             this.cbWriteLine.TabIndex = 0;
             this.cbWriteLine.Text = "WriteLine";
             this.cbWriteLine.UseVisualStyleBackColor = true;
+            this.cbWriteLine.CheckedChanged += new System.EventHandler(this.cbWriteLine_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -336,6 +339,7 @@
             this.cbUsingEnter.TabIndex = 1;
             this.cbUsingEnter.Text = "Using Enter";
             this.cbUsingEnter.UseVisualStyleBackColor = true;
+            this.cbUsingEnter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbUsingEnter_KeyDown);
             // 
             // cbUsingButton
             // 
@@ -346,6 +350,7 @@
             this.cbUsingButton.TabIndex = 0;
             this.cbUsingButton.Text = "Using Button";
             this.cbUsingButton.UseVisualStyleBackColor = true;
+            this.cbUsingButton.CheckedChanged += new System.EventHandler(this.cbUsingButton_CheckedChanged);
             // 
             // groupBox6
             // 

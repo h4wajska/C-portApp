@@ -14,6 +14,7 @@ namespace PortApp
     public partial class Form1 : Form
     {
         string dataOUT;
+        string sendWith;
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +49,10 @@ namespace PortApp
             serialPort1.DtrEnable = false;
             cbRtsEnable.Checked = false;
             serialPort1.RtsEnable = false;
+            btnSendData.Enabled = false;
+            cbWriteLine.Checked = false;
+            cbWrite.Checked = true;
+            sendWith = "Write";
 
         }
 
@@ -138,6 +143,65 @@ namespace PortApp
         {
             int dataOUTLength = tBoxDataOut.TextLength;
             lblDataOutLength.Text = dataOUTLength.ToString();
+            if(cbUsingEnter.Checked == true)
+            {
+                tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");   //zmienia funkcję entera z robienia nowej linii, na wysyłanie
+            }
+        }
+
+        private void cbUsingButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbUsingButton.Checked == true)
+            {
+                btnSendData.Enabled = true;
+            }
+            else
+            {
+                btnSendData.Enabled = false;
+            }
+        }
+
+        private void tBoxDataOut_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(cbUsingEnter.Checked == true)
+            {
+                if(e.KeyCode == Keys.Enter)
+                {
+                    if (serialPort1.IsOpen && serialPort1.BaudRate > 0)
+                    {
+                        dataOUT = tBoxDataOut.Text;
+                        serialPort1.WriteLine(dataOUT);
+                        serialPort1.Write(dataOUT);
+                    }
+                }
+            }
+        }
+
+        private void cbUsingEnter_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void cbWriteLine_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbWriteLine.Checked == true)
+            {
+                sendWith = "WriteLine";
+                cbWrite.Checked = false;
+                cbWriteLine.Checked = true;
+            }
+            
+            
+        }
+
+        private void cbWrite_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbWrite.Checked == true)
+            {
+                sendWith = "Write";
+                cbWriteLine.Checked = false;
+                cbWrite.Checked = true;
+            }
         }
     }
 }
