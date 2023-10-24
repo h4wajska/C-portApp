@@ -54,6 +54,9 @@ namespace PortApp
             cbWrite.Checked = true;
             sendWith = "Write";
 
+            btnOpen.Enabled = true;            
+            btnClose.Enabled = false;
+
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -68,10 +71,17 @@ namespace PortApp
 
                 serialPort1.Open();
                 progressBar1.Value = 100;
+                btnOpen.Enabled = false;            //zapobieganie przed klikaniem open gdy port jest aktywny
+                btnClose.Enabled = true;
+
+                lblStatusCom.Text = "ON";
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnOpen.Enabled = true;
+                btnClose.Enabled = false;
+                lblStatusCom.Text = "OFF";
             }
             
         }
@@ -81,8 +91,12 @@ namespace PortApp
             if(serialPort1.IsOpen)
             {
                 serialPort1.Close();
+                lblStatusCom.Text = "OFF";
+                btnOpen.Enabled = true;
+                btnClose.Enabled = false;
                 progressBar1.Value = 0;
             }
+
         }
 
         private void btnSendData_Click(object sender, EventArgs e)
@@ -90,7 +104,15 @@ namespace PortApp
             if(serialPort1.IsOpen && serialPort1.BaudRate > 0)
             {
                 dataOUT = tBoxDataOut.Text;
-                serialPort1.WriteLine(dataOUT);
+                if (sendWith == "WriteLine")
+                {
+                    serialPort1.WriteLine(dataOUT);
+                }
+                else if(sendWith == "Write")
+                {
+                    serialPort1.Write(dataOUT);
+                }
+                
             }
         }
 
@@ -153,6 +175,7 @@ namespace PortApp
         {
             if(cbUsingButton.Checked == true)
             {
+                cbUsingEnter.Checked = false;
                 btnSendData.Enabled = true;
             }
             else
@@ -170,8 +193,15 @@ namespace PortApp
                     if (serialPort1.IsOpen && serialPort1.BaudRate > 0)
                     {
                         dataOUT = tBoxDataOut.Text;
-                        serialPort1.WriteLine(dataOUT);
-                        serialPort1.Write(dataOUT);
+                        dataOUT = tBoxDataOut.Text;
+                        if (sendWith == "WriteLine")
+                        {
+                            serialPort1.WriteLine(dataOUT);
+                        }
+                        else if (sendWith == "Write")
+                        {
+                            serialPort1.WriteLine(dataOUT);
+                        }
                     }
                 }
             }
@@ -202,6 +232,24 @@ namespace PortApp
                 cbWriteLine.Checked = false;
                 cbWrite.Checked = true;
             }
+        }
+
+        private void cbUsingEnter_CheckedChanged(object sender, EventArgs e)
+        {
+            if( cbUsingEnter.Checked == true)
+            {
+                cbUsingButton.Checked = false;
+            }
+        }
+
+        private void lblStatusCom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
