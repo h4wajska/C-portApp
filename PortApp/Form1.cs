@@ -24,7 +24,12 @@ namespace PortApp
             string[] ports = SerialPort.GetPortNames();
             cBoxCOMPORT.Items.AddRange(ports);
 
-            cBoxBaudRate.Items.Add("2400");
+            cBoxBaudRate.Text = "9600";
+            cBoxDataBits.Text = "8";
+            cBoxStopBits.Text = "One";
+            cBoxParityBits.Text = "None";
+
+            cBoxBaudRate.Items.Add("2400"); //Dodawanie różnych wartości
             cBoxBaudRate.Items.Add("4800");
             cBoxBaudRate.Items.Add("9600");
 
@@ -38,6 +43,11 @@ namespace PortApp
             cBoxParityBits.Items.Add("None");
             cBoxParityBits.Items.Add("Odd");
             cBoxParityBits.Items.Add("Even");
+
+            cbDtrEnable.Checked = false;        //inicjalizowanie odznaczonego CheckBoxa
+            serialPort1.DtrEnable = false;
+            cbRtsEnable.Checked = false;
+            serialPort1.RtsEnable = false;
 
         }
 
@@ -84,6 +94,50 @@ namespace PortApp
             cBoxCOMPORT.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
             cBoxCOMPORT.Items.AddRange(ports);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDtrEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            // ta metoda jest wywoływana przy zmianie statusu checkboxa
+            if(cbDtrEnable.Checked == true)
+            {
+                serialPort1.DtrEnable = true;
+            }
+            else
+            {
+                serialPort1.DtrEnable = false;
+            }
+        }
+
+        private void cbRtsEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbRtsEnable.Checked == true)
+            {
+                serialPort1.RtsEnable = true;
+            }
+            else
+            {
+                serialPort1.RtsEnable = false;
+            }
+        }
+
+        private void btnClearDataOut_Click(object sender, EventArgs e)
+        {
+            if(tBoxDataOut.Text != "")
+            {
+                tBoxDataOut.Text = "";
+            }
+        }
+
+        private void tBoxDataOut_TextChanged(object sender, EventArgs e)
+        {
+            int dataOUTLength = tBoxDataOut.TextLength;
+            lblDataOutLength.Text = dataOUTLength.ToString();
         }
     }
 }
