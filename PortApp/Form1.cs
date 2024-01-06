@@ -30,6 +30,20 @@ namespace PortApp
             cBoxStopBits.Text = "One";
             cBoxParityBits.Text = "None";
 
+            string[] BaudRateItems = { "2400", "4800", "9600" };
+            cBoxBaudRate.Items.AddRange(BaudRateItems);
+
+            string[] DataBitsItems = { "6", "7", "8" };
+            cBoxDataBits.Items.AddRange(DataBitsItems);
+
+            string[] StopBitsItems = { "One", "Two" };
+            cBoxStopBits.Items.AddRange(StopBitsItems);
+
+            string[] ParityBitsItems = { "None", "Odd", "Even" };
+            cBoxParityBits.Items.AddRange(ParityBitsItems);
+
+
+            /*
             cBoxBaudRate.Items.Add("2400"); //Dodawanie różnych wartości
             cBoxBaudRate.Items.Add("4800");
             cBoxBaudRate.Items.Add("9600");
@@ -44,6 +58,7 @@ namespace PortApp
             cBoxParityBits.Items.Add("None");
             cBoxParityBits.Items.Add("Odd");
             cBoxParityBits.Items.Add("Even");
+            */
 
             cbDtrEnable.Checked = false;        //inicjalizowanie odznaczonego CheckBoxa
             serialPort1.DtrEnable = false;
