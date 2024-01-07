@@ -482,6 +482,7 @@
             this.btnClearDataIN.TabIndex = 7;
             this.btnClearDataIN.Text = "Clear Data IN";
             this.btnClearDataIN.UseVisualStyleBackColor = true;
+            this.btnClearDataIN.Click += new System.EventHandler(this.btnClearDataIN_Click);
             // 
             // groupBox11
             // 

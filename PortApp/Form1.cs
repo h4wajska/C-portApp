@@ -155,6 +155,7 @@ namespace PortApp
             if(cbDtrEnable.Checked == true)
             {
                 serialPort1.DtrEnable = true;
+                MessageBox.Show("DTR Enabled","Info",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -167,6 +168,7 @@ namespace PortApp
             if(cbRtsEnable.Checked == true)
             {
                 serialPort1.RtsEnable = true;
+                MessageBox.Show("RTS Enabled", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -284,6 +286,9 @@ namespace PortApp
 
         private void ShowData(object sender, EventArgs e)
         {
+            int dataINLength = dataIN.Length;   //pokazanie długości danych 
+            lblDataInLength.Text = string.Format("{0:00}",dataINLength);
+
             if(chBoxAlwaysUpdate.Checked == true)
             {
                 tBoxDataIN.Text = dataIN.ToString();    //dane zostaną zaktualizowane tylko gdy będzie zaznaczony checkbox
@@ -302,6 +307,7 @@ namespace PortApp
                 chBoxAlwaysUpdate.Checked = true;
                 chBoxAddToOldData.Checked = false;
             }
+            else { chBoxAddToOldData.Checked = true; }
         }
 
         private void chBoxAddToOldData_CheckedChanged(object sender, EventArgs e)
@@ -310,6 +316,18 @@ namespace PortApp
             {
                 chBoxAddToOldData.Checked = true;
                 chBoxAlwaysUpdate.Checked = false;
+            }
+            else { chBoxAlwaysUpdate.Checked = false; }
+        }
+
+        private void btnClearDataIN_Click(object sender, EventArgs e)
+        {
+            if(tBoxDataIN.Text != "") //textbox się nie wyczyści jeśli nie ma tu tekstu
+            {
+                tBoxDataIN.Clear();
+                //alternatywnie:
+                //tBoxDataIN.Text = string.Empty; 
+                //tBoxDataIN.Text = "";
             }
         }
     }
