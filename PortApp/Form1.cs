@@ -75,6 +75,9 @@ namespace PortApp
             btnOpen.Enabled = true;            
             btnClose.Enabled = false;
 
+            chBoxAddToOldData.Checked = true;
+            chBoxAlwaysUpdate.Checked = false;
+
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -281,7 +284,14 @@ namespace PortApp
 
         private void ShowData(object sender, EventArgs e)
         {
-            tBoxDataIN.Text = dataIN.ToString();
+            if(chBoxAlwaysUpdate.Checked == true)
+            {
+                tBoxDataIN.Text = dataIN.ToString();    //dane zostaną zaktualizowane tylko gdy będzie zaznaczony checkbox
+            }
+            else if(chBoxAddToOldData.Checked == true)
+            {
+                tBoxDataIN.Text += dataIN.ToString(); 
+            }
         }
         //----------------------------------------------------------------------------------
 
