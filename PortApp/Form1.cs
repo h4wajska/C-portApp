@@ -15,6 +15,9 @@ namespace PortApp
     {
         string dataOUT;
         string sendWith;
+        string dataIN;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -265,6 +268,39 @@ namespace PortApp
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //----------------------------------------------------------------------------------
+        // TE DWIE METODY SĄ ZE SOBĄ POWIĄZANE - odczyt danych
+        //----------------------------------------------------------------------------------
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            dataIN = serialPort1.ReadExisting();        //odczyt z serial portu chyba?
+            this.Invoke(new EventHandler(ShowData));  //pokazuje dane w textboxie; nie da się pokazać danych bezpośrednio bez użycia tej metody
+        }
+
+        private void ShowData(object sender, EventArgs e)
+        {
+            tBoxDataIN.Text = dataIN.ToString();
+        }
+        //----------------------------------------------------------------------------------
+
+        private void chBoxAlwaysUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxAlwaysUpdate.Checked)
+            {
+                chBoxAlwaysUpdate.Checked = true;
+                chBoxAddToOldData.Checked = false;
+            }
+        }
+
+        private void chBoxAddToOldData_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxAddToOldData.Checked)
+            {
+                chBoxAddToOldData.Checked = true;
+                chBoxAlwaysUpdate.Checked = false;
+            }
         }
     }
 }
